@@ -28,9 +28,9 @@ const Home = () => {
   //     console.log(allData.Email);
   //   }
 
-  //   useEffect(() => {
-  //     setIsClicked(false);
-  //   }, [allData]);
+    useEffect(() => {
+      setIsClicked(false);
+    }, [allData]);
 
   const submitHandler = (e) => {
     e.preventDefault();
