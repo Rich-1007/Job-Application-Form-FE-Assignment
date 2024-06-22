@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Validate } from "./Validate";
+// import { Validate } from "../../helpers/Validate";
 import Submit from "./Submit";
+import useFormValidate from "../../Hooks/useFormValidate";
 
 const Home = () => {
+  const { errors, handleSubmit } = useFormValidate();
+
   const [allData, setAllData] = useState({
     fullname: "",
     email: "",
@@ -19,9 +22,9 @@ const Home = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const [isClicked, setIsClicked] = useState();
-  const [errors, setErrors] = useState(null);
+  // const [errors, setErrors] = useState(null);
 
-  console.log(errors);
+  // console.log(errors);
   // console.log(allData.Time);
 
   function handleCheckboxChange(e) {
@@ -49,16 +52,15 @@ const Home = () => {
   }, [allData]);
 
   function HandleisClicked() {
-
     setIsClicked(true);
   }
 
-  function FormSubmitHandler(e) {
-    e.preventDefault();
+  // function FormSubmitHandler(e) {
+  //   e.preventDefault();
 
-    const ErrorData = Validate(allData);
-    setErrors(ErrorData);
-  }
+  //   const ErrorData = Validate(allData);
+  //   setErrors(ErrorData);
+  // }
 
   return (
     <div className="bg-gray-700 px-3 sm:px-20 pb-6 flex flex-col items-center ">
@@ -67,7 +69,7 @@ const Home = () => {
       </div>
 
       <div className="sm:w-6/12 flex justify-center rounded-md bg-gray-300 px-3 py-6 sm:px-3 flex-col">
-        <form action="" onSubmit={FormSubmitHandler}>
+        <form action="" onSubmit={(e) => handleSubmit(e, allData)}>
           <div className="flex flex-col gap-5 text-xs sm:text-base">
             <div className="flex flex-row gap-2 justify-between">
               <span>Full Name *</span>
@@ -91,6 +93,13 @@ const Home = () => {
                   )}
                 </div>
               </div>
+
+
+
+
+
+
+              
             </div>
 
             <div className="flex flex-row gap-2 justify-between">
@@ -339,9 +348,7 @@ const Home = () => {
           </div>
 
           <div className="flex justify-center py-8">
-            <button 
-
-            
+            <button
               onClick={HandleisClicked}
               className="bg-orange-500 px-12 py-2 rounded-lg hover:bg-orange-600 transition-all duration-300 text-white text-lg hover:text-gray-200 font-semibold"
             >

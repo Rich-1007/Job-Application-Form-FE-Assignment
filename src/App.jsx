@@ -1,11 +1,14 @@
-import Home from "./Components/Job-Application/Home";
+import React from "react";
+import Home from "./Components/Event-Registration-Form/Home";
+// import Home from './Components/Job-Application/Home'
+Home;
 
-function App() {
+const App = () => {
   return (
     <>
       <Home />
     </>
   );
-}
+};
 
 export default App;
