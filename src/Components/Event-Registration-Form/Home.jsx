@@ -40,12 +40,12 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-gray-700 px-3 sm:px-20 pb-6 flex flex-col items-center ">
-        <div className="flex w-full py-10 justify-center text-2xl font-semibold text-white">
-          <span>Job Application Form</span>
+      <div className="bg-gray-700 px-3 sm:px-20 pb-6 flex flex-col items-center  w-screen">
+        <div className="flex  py-10 justify-center text-2xl font-semibold text-white">
+          <span>Event Registration Form</span>
         </div>
 
-        <div className="sm:w-6/12 flex justify-center rounded-md bg-gray-300 px-3 py-6 sm:px-3 flex-col">
+        <div className="sm:w-6/12 w-11/12 flex justify-center rounded-md bg-gray-300 px-8 py-6 sm:px-3 flex-col">
           <form action="" onSubmit={submitHandler}>
             <div className="flex flex-col gap-5 text-xs sm:text-base">
               <div className="flex flex-row gap-2 justify-between">
@@ -146,7 +146,7 @@ const Home = () => {
                 </div>
               </div>
 
-              {allData.Guest && (
+              {allData.Guest  && (
                 <div className="flex flex-row gap-2 justify-between">
                   <span>Guest Name *</span>
 
